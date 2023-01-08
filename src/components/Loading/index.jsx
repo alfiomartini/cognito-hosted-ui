@@ -7,11 +7,14 @@ export const Loading = ({ setUser }) => {
   const location = useLocation();
   const history = useHistory();
   const authCode = new URLSearchParams(location.search).get("code");
+  console.log("start loading");
 
   if (!authCode) {
     console.log("authCode is undefined");
     return;
   }
+
+  console.log("get auth code");
   const body = {
     grant_type: "authorization_code",
     client_id: CLIENT_ID,
