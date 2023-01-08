@@ -27,7 +27,7 @@ function App() {
             {!user && <h2>Sign in to start Cognito Hosted-UI</h2>}
             {user && <h2>Sign out restart with Cognito Hosted-UI</h2>}
           </Route>
-          <Route path="/loading">
+          <Route path={["/loading", "/cognito-hosted-ui/loading"]}>
             <Loading setUser={setUser} />
           </Route>
           <Route path="/signIn">
