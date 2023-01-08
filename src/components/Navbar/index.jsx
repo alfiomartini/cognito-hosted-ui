@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./styles.css";
 
 export const Navbar = ({ auth, doSignOut }) => {
+  const history = useHistory();
+
   return (
     <div className="navbar">
-      <div className="logo">Cognito Hosted-UI</div>
+      <div className="logo" onClick={() => history.replace("/")}>
+        Cognito Hosted-UI
+      </div>
 
       {!auth && (
         <Link to="/signIn" className="link">

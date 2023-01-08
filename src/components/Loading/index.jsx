@@ -22,7 +22,7 @@ export const Loading = ({ setUser }) => {
   const formBody = Object.keys(body)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(body[key])}`)
     .join("&");
-  console.log(formBody);
+
   const headers = {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
