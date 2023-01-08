@@ -23,7 +23,7 @@ function App() {
       <Navbar auth={user} doSignOut={doSignOut} />
       <div className="container">
         <Switch>
-          <Route exact path={["/", "/cognito-hosted-ui"]}>
+          <Route exact path={["/"]}>
             {!user && <h2>Sign in to start Cognito Hosted-UI</h2>}
             {user && <h2>Sign out restart with Cognito Hosted-UI</h2>}
           </Route>
