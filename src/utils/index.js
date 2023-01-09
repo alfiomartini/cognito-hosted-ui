@@ -11,16 +11,17 @@ export const REDIRECT_URI_PROD =
 export const REDIRECT_URI =
   process.env.NODE_ENV === "development" ? REDIRECT_URI_DEV : REDIRECT_URI_PROD;
 
+export const QUERY = `client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`;
+
 export const getCognitoURL = () => {
   const loginBase = `${COGNITO_BASE_URL}/login?`;
-  const query = `client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`;
-  return `${loginBase}${query}`;
+  return `${loginBase}${QUERY}`;
 };
 
 export const signOut = async (token) => {
   const body = {
     Token: token,
-    ClientId: "1l1pg2a87u7agm14jh6loovrbh",
+    ClientId: `${CLIENT_ID}`,
   };
 
   const headers = {
